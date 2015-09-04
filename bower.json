@@ -1,0 +1,27 @@
+{
+  "name": "polymer",
+  "version": "0.0.0",
+  "description": "First polymer web=app",
+  "keywords": [
+    "Polymer",
+    "web-components"
+  ],
+  "authors": [
+    "AJ"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-input": "Polymer/paper-input#~0.5.6",
+    "polymer": "Polymer/polymer#~1.1.2"
+  },
+  "resolutions": {
+    "webcomponentsjs": "^0.7.2"
+  }
+}

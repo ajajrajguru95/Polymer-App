@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+<link rel="import" href="bower_components/core-icon/core-icon.html">
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="bower_components/font-roboto/roboto.html">
+<link rel="import" href="bower_components/paper-progress/paper-progress.html">
+<link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
+<link href="bower_components/paper-input/paper-input.html" rel="import">
+<link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+<link rel="import" href="bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="bower_components/paper-spinner/paper-spinner.html">
+<link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
+
+
+<link rel="import" href="post-card/post-card.html">
+
+
+<link rel="import" href="post-list/post-list.html">
+
+
+<!--link rel="import" href="bower_components/core-ajax/core-ajax.html"-->
+<style>
+
+
+
+html,body {
+  height: 100%;
+  margin: 0;
+  background-color: #E5E5E5;
+  font-family: 'RobotoDraft', sans-serif;
+}
+core-header-panel {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+core-toolbar {
+  background: #F4030C;
+  color: white;
+}
+#tabs {
+  width: 100%;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+  }
+
+  @media (min-width: 481px) {
+    #tabs {
+      width: 200px;
+    }
+    .container {
+      width: 400px;
+    }
+  }
+
+
+</style>
+</head>
+<body fullbleed vertical layout unresolved>
+  <!--core-header-panel flex>
+    <core-toolbar id="mainheader">
+
+<paper-tabs id="tabs" selected="all" self-end>
+    <paper-tab name="all">All</paper-tab>
+    <paper-tab name="favorit">Favorites</paper-tab>
+     <paper-tab name="al">All</paper-tab>
+    <paper-tab name="favorites">Favorites</paper-tab>
+     <paper-tab name="a">All</paper-tab>
+    <paper-tab name="favorits">Favorites</paper-tab>
+  </paper-tabs>
+
+
+      <paper-icon-button id="navicon"
+        icon="arrow-back"></paper-icon-button>
+      <span flex>Title</span>
+      <paper-icon-button id="searchbutton"
+        icon="search"></paper-icon-button>
+
+
+
+    </core-toolbar>
+    <p>Sample content.</p>
+    <p>Sample content.</p>
+
+
+
+<paper-progress value="10" secondaryProgress="30"></paper-progress>
+
+<paper-ripple class="recenteringTouch"></paper-ripple>
+
+<paper-shadow z="1">
+  ... card content ...
+</paper-shadow>
+
+<paper-slider min="10" max="200" value="110"></paper-slider>
+
+<paper-spinner active></paper-spinner>
+
+
+<paper-tabs selected="0">
+  <paper-tab>TAB 1</paper-tab>
+  <paper-tab>TAB 2</paper-tab>
+  <paper-tab>TAB 3</paper-tab>
+</paper-tabs>
+
+
+<paper-toast text="Your draft has been discarded." onclick="discardDraft(el)"></paper-toast>
+
+<script>
+  function discardDraft(el) {
+    el.show();
+  }
+</script>
+
+
+<paper-toast id="toast2" text="Connection timed out. Showing limited messages.">
+  <div style="color: blue;" on-tap="{{retry}}">Retry</div>
+</paper-toast>
+
+
+
+<paper-toggle-button></paper-toggle-button>
+
+  </core-header-panel-->
+
+
+
+
+
+
+<core-header-panel>
+
+  <core-toolbar>
+
+    <paper-tabs id="tabs" selected="all" self-end>
+      <paper-tab name="all">All</paper-tab>
+      <paper-tab name="favorites">Favorites</paper-tab>
+    </paper-tabs>
+
+  </core-toolbar>
+
+
+<div class="container" layout vertical center>
+
+  <!--post-card>
+    <img width="70" height="70"
+      src="images/avatar-07.svg">
+    <h2>Another Developer</h2>
+    <p>I'm composing with shadow DOM!</p>
+  </post-card-->
+
+
+<post-list show="all"></post-list>
+
+</div>
+
+
+</core-header-panel>
+
+
+
+
+
+
+
+
+
+
+<script>
+  var tabs = document.querySelector('paper-tabs');
+
+var list = document.querySelector('post-list');
+
+  tabs.addEventListener('core-select', function() {
+   // console.log("Selected: " + tabs.selected);
+    list.show = tabs.selected;
+  });
+
+
+
+</script>
+
+
+</body>
+</html>
